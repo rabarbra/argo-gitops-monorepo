@@ -1,0 +1,13 @@
+helmCharts:
+- name: nginx
+  includeCRDs: false
+  valuesInline:
+    service:
+      type: ClusterIP
+    ingress:
+      enabled: true
+      pathType: ImplementationSpecific
+      hostname: test-app.rabarbra.me
+      path: /
+  version: 18.2.5
+  repo: https://charts.bitnami.com/bitnami

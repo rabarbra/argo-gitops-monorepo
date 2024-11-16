@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: base-appset
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - merge:
+      mergeKeys:
+        - values.clusterName
+      generators:
+        - clusters:
+          values:
+            clusterName: {{ .name }}
+        - git:
+          repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
+          revision: HEAD
+          directories:
+          - path: 'clusters/*/*'
+          values:
+            clusterName: {{ index .path.segments 1 }}
+            appName: {{ index .path.segments 2 }}
+  template:
+    metadata:
+      name: {{ .values.appName }}
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
+        targetRevision: HEAD
+        path: {{ .path.path }}
+      destination:
+        server: '{{ .server }}'
+        namespace: default

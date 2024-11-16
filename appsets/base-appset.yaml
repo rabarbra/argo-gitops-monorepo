@@ -23,13 +23,13 @@ spec:
                 appName: {{ index .path.segments 3 }}
   template:
     metadata:
-      name: {{ .values.appName }}
+      name: "{{ .values.appName }}"
     spec:
-      project: {{ .values.projectName }}
+      project: "{{ .values.projectName }}"
       source:
         repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
         targetRevision: HEAD
-        path: {{ .path.path }}
+        path: "{{ .path.path }}"
       destination:
-        server: {{ .server }}
-        namespace: {{ .values.appName }}
+        server: "{{ .server }}"
+        namespace: "{{ .values.appName }}"

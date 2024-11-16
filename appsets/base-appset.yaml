@@ -12,7 +12,7 @@ spec:
         generators:
           - clusters:
               values:
-                clusterName: '{{ .name }}'
+                clusterName: '{{ .name | default "unknown-cluster" }}'
           - git:
               repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
               revision: HEAD

@@ -4,6 +4,7 @@ metadata:
   name: base-appset
 spec:
   goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
   generators:
     - merge:
         mergeKeys:
@@ -11,25 +12,25 @@ spec:
         generators:
           - clusters:
               values:
-                clusterName: {{ .name }}
+                clusterName: '{{ .name }}'
           - git:
               repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
               revision: HEAD
               directories:
                 - path: 'clusters/*/*/*'
               values:
-                clusterName: {{ index .path.segments 1 }}
-                projectName: {{ index .path.segments 2 }}
-                appName: {{ index .path.segments 3 }}
+                clusterName: '{{index .path.segments 1}}'
+                projectName: '{{index .path.segments 2}}'
+                appName: '{{index .path.segments 3}}'
   template:
     metadata:
-      name: "{{ .values.appName }}"
+      name: '{{ .values.appName }}'
     spec:
-      project: "{{ .values.projectName }}"
+      project: '{{ .values.projectName }}'
       source:
         repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
         targetRevision: HEAD
-        path: "{{ .path.path }}"
+        path: '{{ .path.path }}'
       destination:
-        server: "{{ .server }}"
-        namespace: "{{ .values.appName }}"
+        server: '{{ .values.clusterName }}'
+        namespace: '{{ .values.appName }}'

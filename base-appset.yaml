@@ -31,5 +31,5 @@ spec:
         targetRevision: HEAD
         path: {{ .path.path }}
       destination:
-        server: '{{ .server }}'
+        server: {{ .server }}
         namespace: default

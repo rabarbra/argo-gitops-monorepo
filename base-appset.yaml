@@ -6,21 +6,21 @@ spec:
   goTemplate: true
   generators:
     - merge:
-      mergeKeys:
-        - values.clusterName
-      generators:
-        - clusters:
-          values:
-            clusterName: {{ .name }}
-        - git:
-          repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
-          revision: HEAD
-          directories:
-          - path: 'clusters/*/*/*'
-          values:
-            clusterName: {{ index .path.segments 1 }}
-            projectName: {{ index .path.segments 2 }}
-            appName: {{ index .path.segments 3 }}
+        mergeKeys:
+          - values.clusterName
+        generators:
+          - clusters:
+              values:
+                clusterName: {{ .name }}
+          - git:
+              repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
+              revision: HEAD
+              directories:
+                - path: 'clusters/*/*/*'
+              values:
+                clusterName: {{ index .path.segments 1 }}
+                projectName: {{ index .path.segments 2 }}
+                appName: {{ index .path.segments 3 }}
   template:
     metadata:
       name: {{ .values.appName }}

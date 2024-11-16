@@ -19,7 +19,7 @@ spec:
               directories:
                 - path: 'clusters/*/*/*'
               values:
-                clusterName: '{{index .path.segments 1}}'
+                clusterName: '{{index .path.segments 1 | default "unknown-cluster"}}'
                 projectName: '{{index .path.segments 2}}'
                 appName: '{{index .path.segments 3}}'
   template:

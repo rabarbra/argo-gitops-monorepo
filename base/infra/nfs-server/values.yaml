@@ -1,0 +1,9 @@
+persistence:
+  enabled: true
+  storageClass: "local-path"
+  size: 150Gi
+storageClass:
+  name: nfs-client
+  defaultClass: true
+nodeSelector:
+  node-role.kubernetes.io/master: "true"

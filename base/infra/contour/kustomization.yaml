@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+namespace: contour
+resources:
+  - namespace.yaml
+
+# --------------------------------------------
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+
+# components:
+# - ../../../../base/infra/contour
+
+# helmCharts:
+# - name: contour
+#   version: 19.3.1
+#   repo: https://charts.bitnami.com/bitnami
+#   valuesFile: ../../../../base/infra/contour/values.yaml

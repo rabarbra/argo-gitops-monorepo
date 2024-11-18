@@ -34,3 +34,9 @@ spec:
       destination:
         name: '{{ .values.clusterName }}'
         namespace: '{{ .values.appName }}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true

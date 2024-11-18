@@ -6,13 +6,13 @@ spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
-    - merge:
-        mergeKeys:
-          - values.clusterName
-        generators:
-          - clusters:
-              values:
-                clusterName: '{{ .name | default "unknown-cluster" }}'
+    # - merge:
+    #     mergeKeys:
+    #       - values.clusterName
+    #     generators:
+    #       - clusters:
+    #           values:
+    #             clusterName: '{{ .name | default "unknown-cluster" }}'
           - git:
               repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
               revision: HEAD

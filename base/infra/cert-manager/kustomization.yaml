@@ -17,3 +17,7 @@ resources:
 #   version: 1.16.1
 #   repo: https://charts.jetstack.io
 #   valuesFile: ../../../../base/infra/cert-manager/values.yaml
+#   valuesInline:
+#      fullnameOverride: cert-manager
+#   includeCRDs: true
+

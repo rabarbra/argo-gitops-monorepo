@@ -17,3 +17,6 @@ resources:
 #   version: 2.20.0
 #   repo: https://dirsigler.github.io/uptime-kuma-helm
 #   valuesFile: ../../../../base/infra/uptime-kuma/values.yaml
+#   valuesInline:
+#      fullnameOverride: uptime-kuma
+#   includeCRDs: true

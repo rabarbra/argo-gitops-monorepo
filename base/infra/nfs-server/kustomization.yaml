@@ -17,3 +17,6 @@ resources:
 #   version: 1.8.0
 #   repo: https://kubernetes-sigs.github.io/nfs-ganesha-server-and-external-provisioner/
 #   valuesFile: ../../../../base/infra/nfs-server/values.yaml
+#   valuesInline:
+#      fullnameOverride: nfs-server-provisioner
+#   includeCRDs: true

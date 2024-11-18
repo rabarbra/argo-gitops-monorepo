@@ -24,7 +24,7 @@ spec:
                 appName: '{{index .path.segments 3}}'
   template:
     metadata:
-      name: '{{ .values.appName }}'
+      name: '{{ .values.clusterName }}-{{ .values.appName }}'
     spec:
       project: '{{ .values.projectName }}'
       source:

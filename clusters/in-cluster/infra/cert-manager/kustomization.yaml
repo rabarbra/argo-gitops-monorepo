@@ -5,7 +5,7 @@ components:
 - ../../../../base/infra/cert-manager
 
 resources:
-  - ../../../../base/infra/cert-manager
+  - ../../../../base/infra/cert-manager/resources
 
 helmCharts:
 - name: cert-manager

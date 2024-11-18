@@ -4,6 +4,7 @@ kind: Component
 namespace: cert-manager
 resources:
   - namespace.yaml
+  - clusterissuer.yaml
 
 # --------------------------------------------
 # apiVersion: kustomize.config.k8s.io/v1beta1

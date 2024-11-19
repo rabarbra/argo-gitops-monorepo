@@ -12,5 +12,5 @@ helmCharts:
   valuesFile: ../../../../base/apps/web-tty/values.yaml
   releaseName: ""
   valuesInline:
-     fullnameOverride: filebrowser
+     fullnameOverride: web-tty
   includeCRDs: true

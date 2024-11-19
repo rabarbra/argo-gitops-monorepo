@@ -10,7 +10,7 @@ spec:
       repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
       revision: HEAD
       directories:
-        - path: 'base/*/project.yaml'
+        - path: 'base/*'
       values:
         projectName: '{{index .path.segments 1}}'
   template:

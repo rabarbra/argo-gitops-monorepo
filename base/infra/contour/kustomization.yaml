@@ -15,6 +15,7 @@ resources:
 # helmCharts:
 # - name: contour
 #   version: 19.3.1
+#   namespace: contour
 #   repo: https://charts.bitnami.com/bitnami
 #   valuesFile: ../../../../base/infra/contour/values.yaml
 #   valuesInline:

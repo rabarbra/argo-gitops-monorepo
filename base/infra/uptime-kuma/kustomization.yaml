@@ -14,6 +14,7 @@ resources:
 
 # helmCharts:
 # - name: uptime-kuma
+#   namespace: uptime-kuma
 #   version: 2.20.0
 #   repo: https://dirsigler.github.io/uptime-kuma-helm
 #   valuesFile: ../../../../base/infra/uptime-kuma/values.yaml

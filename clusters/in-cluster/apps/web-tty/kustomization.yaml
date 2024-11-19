@@ -11,4 +11,6 @@ helmCharts:
   repo: https://rabarbra.github.io/charts/
   valuesFile: ../../../../base/apps/web-tty/values.yaml
   releaseName: ""
+  valuesInline:
+     fullnameOverride: filebrowser
   includeCRDs: true

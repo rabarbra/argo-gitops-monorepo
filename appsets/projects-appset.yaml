@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: projects-appset
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - git:
+      repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
+      revision: HEAD
+      directories:
+        - path: 'base/*/project.yaml'
+      values:
+        projectName: '{{index .path.segments 1}}'
+  template:
+    metadata:
+      name: 'project-{{ .values.projectName }}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/rabarbra/argo-gitops-monorepo/
+        targetRevision: HEAD
+        path: '{{ .path.path }}'
+      destination:
+        name: 'in-cluster'
+        namespace: argocd
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+      ignoreDifferences:
+      - group: admissionregistration.k8s.io
+        kind: MutatingWebhookConfiguration
+        jqPathExpressions:
+        - .webhooks[]?.clientConfig.caBundle

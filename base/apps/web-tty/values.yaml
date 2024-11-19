@@ -1,0 +1,17 @@
+image:
+  pullPolicy: Always
+ingress:
+  enabled: true
+  className: contour
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    projectcontour.io/websocket-routes: "/"
+  hosts:
+    - host: sh.rabarbra.me
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+  - secretName: web-tty-tls
+    hosts:
+      - sh.rabarbra.me

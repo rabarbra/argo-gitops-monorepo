@@ -10,14 +10,14 @@ resources:
 # kind: Kustomization
 
 # components:
-# - ../../../../base/infra/contour
+# - ../../../../base/infra/vault
 
 # helmCharts:
-# - name: contour
-#   version: 19.3.1
-#   namespace: contour
-#   repo: https://charts.bitnami.com/bitnami
-#   valuesFile: ../../../../base/infra/contour/values.yaml
+# - name: vault
+#   version: 0.29.0
+#   namespace: vault
+#   repo: https://helm.releases.hashicorp.com
+#   valuesFile: ../../../../base/infra/vault/values.yaml
 #   valuesInline:
-#      fullnameOverride: contour
+#      fullnameOverride: vault
 #   includeCRDs: true

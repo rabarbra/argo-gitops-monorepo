@@ -7,12 +7,12 @@ resources:
 patches:
   - target:
       kind: HelmChartInflationGenerator
-      name: whoami
+      name: base
     patch: |-
       [
         {
           "op": "add",
           "path": "/additionalValuesFiles",
-          "value": ["values-test.yaml"]
+          "value": ["values.yaml"]
         }
       ]

@@ -1,7 +1,7 @@
 apiVersion: builtin
 kind: HelmChartInflationGenerator
 metadata:
-  name: whoami
+  name: base
 repo: https://cowboysysop.github.io/charts/
 namespace: test-app
 releaseName: whoami

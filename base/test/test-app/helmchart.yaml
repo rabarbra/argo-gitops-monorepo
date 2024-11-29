@@ -1,10 +1,10 @@
 apiVersion: builtin
 kind: HelmChartInflationGenerator
 metadata:
-  name: nginx
-repo: https://charts.bitnami.com/bitnami
+  name: whoami
+repo: https://cowboysysop.github.io/charts/
 namespace: test-app
-releaseName: nginx
-name: nginx
-version: 18.2.6
+releaseName: whoami
+name: cowboysysop
+version: 5.2.0
 valuefile: values.yaml

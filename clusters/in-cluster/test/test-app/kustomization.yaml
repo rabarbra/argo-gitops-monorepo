@@ -2,10 +2,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 generators:
-- ../../../../base/test/test-app
-
-patches:
-  - path: helmpatch.yaml
-    target:
-      kind: HelmChartInflationGenerator
-      name: nginx
+- generator.yaml

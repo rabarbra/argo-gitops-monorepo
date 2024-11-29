@@ -1,11 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-components:
+resources:
 - ../../../../base/test/test-app
 
-helmCharts:
-- name: nginx
-  version: 18.2.5
-  repo: https://charts.bitnami.com/bitnami
-  valuesFile: ../../../../base/test/test-app/values.yaml
+patches:
+  - path: helmpatch.yaml
+    target:
+      kind: HelmChartInflationGenerator
+      name: nginx

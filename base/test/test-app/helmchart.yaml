@@ -1,0 +1,10 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: nginx
+repo: https://charts.bitnami.com/bitnami
+namespace: test-app
+releaseName: nginx
+name: nginx
+version: 18.2.6
+valuefile: values.yaml

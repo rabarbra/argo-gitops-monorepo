@@ -9,7 +9,10 @@ patches:
       kind: HelmChartInflationGenerator
       name: whoami
     patch: |-
-      - op: add
-      path: /additionalValuesFiles
-      value:
-        - values-test.yaml
+      [
+        {
+          "op": "add",
+          "path": "/additionalValuesFiles",
+          "value": ["values-test.yaml"]
+        }
+      ]

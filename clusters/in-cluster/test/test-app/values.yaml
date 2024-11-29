@@ -1,2 +1,6 @@
 ingress:
   enabled: true
+   hosts:
+    - host: test-app.rabarbra.me
+      paths:
+        - /

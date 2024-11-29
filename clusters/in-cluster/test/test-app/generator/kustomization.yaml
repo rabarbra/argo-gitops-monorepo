@@ -8,4 +8,4 @@ patches:
   - path: helmpatch.yaml
     target:
       kind: HelmChartInflationGenerator
-      name: nginx
+      name: whoami

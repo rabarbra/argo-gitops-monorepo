@@ -1,4 +1,0 @@
-- op: add
-  path: /additionalValuesFiles
-  value:
-    - values-test.yaml

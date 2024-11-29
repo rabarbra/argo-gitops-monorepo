@@ -5,7 +5,11 @@ resources:
 - ../../../../../base/test/test-app/
 
 patches:
-  - path: helmpatch.yaml
-    target:
+  - target:
       kind: HelmChartInflationGenerator
       name: whoami
+    patch: |-
+      - op: add
+      path: /additionalValuesFiles
+      value:
+        - values-test.yaml

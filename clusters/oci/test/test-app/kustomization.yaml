@@ -1,13 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-components:
-- ../../../../base/test/test-app
-
-helmCharts:
-- name: nginx
-  version: 18.2.5
-  repo: https://charts.bitnami.com/bitnami
-  valuesFile: ../../../../base/test/test-app/values.yaml
-  additionalValuesFiles:
-      - values-overwrite.yaml
+generators:
+- generator

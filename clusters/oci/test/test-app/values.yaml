@@ -1,0 +1,7 @@
+replicaCount: 1
+ingress:
+  enabled: true
+  hosts:
+    - host: test-app.simonenko.eu
+      paths:
+        - /

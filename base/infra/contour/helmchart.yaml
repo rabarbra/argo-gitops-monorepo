@@ -6,7 +6,7 @@ name: contour
 version: 19.3.1
 namespace: projectcontour
 repo: https://charts.bitnami.com/bitnami
-valuesFile: values.yaml
+valuefile: values.yaml
 valuesInline:
   fullnameOverride: contour
 includeCRDs: true

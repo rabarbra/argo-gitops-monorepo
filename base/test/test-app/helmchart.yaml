@@ -7,4 +7,4 @@ namespace: test-app
 releaseName: whoami
 name: whoami
 version: 5.2.0
-valuesFile: values.yaml
+valuefile: values.yaml

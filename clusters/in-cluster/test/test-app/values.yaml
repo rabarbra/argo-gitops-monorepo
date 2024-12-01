@@ -1,7 +1,7 @@
 replicaCount: 1
 ingress:
   enabled: true
-  ingressClassName: nginx
+  ingressClassName: contour
   hosts:
     - host: test-app.simonenko.eu
       paths:

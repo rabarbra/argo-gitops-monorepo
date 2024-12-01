@@ -4,3 +4,16 @@ kind: Kustomization
 namespace: test-app
 resources:
   - helmchart.yaml
+
+patches:
+  - target:
+      kind: HelmChartInflationGenerator
+      name: base
+    patch: |-
+      [
+        {
+          "op": "add",
+          "path": "/additionalValuesFiles",
+          "value": ["values.yaml"]
+        }
+      ]

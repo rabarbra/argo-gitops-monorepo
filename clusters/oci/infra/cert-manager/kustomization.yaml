@@ -1,18 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-components:
-- ../../../../base/infra/cert-manager
+generators:
+- ../../../../base/infra/cert-manager/
 
-helmCharts:
-- name: cert-manager
-  namespace: cert-manager
-  version: 1.16.1
-  repo: https://charts.jetstack.io
-  valuesFile: ../../../../base/infra/cert-manager/values.yaml
-  releaseName: ""
-  valuesInline:
-     fullnameOverride: cert-manager
-     config:
-       enableGatewayAPI: false
-  includeCRDs: true
+resources:
+- ../../../../base/infra/cert-manager/resources
+
+patches:
+  - target:
+      group: cert-manager.io
+      version: v1
+      kind: ClusterIssuer
+      name: letsencrypt-prod
+    path: clusterissuer-patch.yaml

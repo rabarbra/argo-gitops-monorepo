@@ -1,26 +1,19 @@
-apiVersion: kustomize.config.k8s.io/v1alpha1
-kind: Component
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 
-namespace: cert-manager
+namespace: contour
 resources:
-  - namespace.yaml
-  - clusterissuer.yaml
+  - helmchart.yaml
 
-# --------------------------------------------
-# apiVersion: kustomize.config.k8s.io/v1beta1
-# kind: Kustomization
-
-# components:
-# - ../../../../base/infra/cert-manager
-
-# helmCharts:
-# - name: cert-manager
-#   namespace: cert-manager
-#   version: 1.16.1
-#   repo: https://charts.jetstack.io
-#   valuesFile: ../../../../base/infra/cert-manager/values.yaml
-#   releaseName: ""
-#   valuesInline:
-#      fullnameOverride: cert-manager
-#   includeCRDs: true
-
+patches:
+  - target:
+      kind: HelmChartInflationGenerator
+      name: base
+    patch: |-
+      [
+        {
+          "op": "add",
+          "path": "/additionalValuesFiles",
+          "value": ["values.yaml"]
+        }
+      ]

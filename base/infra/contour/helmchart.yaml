@@ -4,7 +4,7 @@ metadata:
   name: base
 name: contour
 version: 19.3.1
-namespace: projectcontour
+namespace: contour
 repo: https://charts.bitnami.com/bitnami
 valuefile: values.yaml
 valuesInline:

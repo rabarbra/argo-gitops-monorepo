@@ -1,18 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-patches:
-  - target:
-      kind: HelmChartInflationGenerator
-      name: base
-    patch: |-
-      [
-        {
-          "op": "add",
-          "path": "/additionalValuesFiles",
-          "value": ["values.yaml"]
-        }
-      ]
-
-resources:
-- ../../../../base/test/test-app/
+generators:
+- ../../../../base/test/test-app/generator

@@ -15,4 +15,4 @@ patches:
       ]
 
 resources:
-- ../../../../../base/test/test-app/
+- ../../../../base/test/test-app/

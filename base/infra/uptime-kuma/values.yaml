@@ -17,3 +17,5 @@ ingress:
     - secretName: uptime-kuma-tls
       hosts:
         - uptime.rabarbra.me
+volume:
+  accessMode: ReadWriteMany

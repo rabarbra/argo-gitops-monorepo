@@ -1,0 +1,5 @@
+gatewayAPI:
+  manageCRDs: true
+ingressClass:
+  name: "abc"
+  default: false

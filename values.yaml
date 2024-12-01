@@ -1,8 +1,7 @@
 replicaCount: 1
 ingress:
   enabled: true
-  ingressClassName: nginx
   hosts:
-    - host: test-app.simonenko.eu
+    - host: test-app.rabarbra.me
       paths:
         - /

@@ -3,6 +3,6 @@ ingress:
   enabled: true
   ingressClassName: contour
   hosts:
-    - host: test-app.simonenko.eu
+    - host: test-app.rabarbra.me
       paths:
         - /

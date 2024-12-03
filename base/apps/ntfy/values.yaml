@@ -1,5 +1,9 @@
 ntfy:
   baseURL: "https://ntfy.rabarbra.me"
+  cache:
+    file: /var/cache/ntfy/cache.db
+  attachment:
+    cacheDir: /var/cache/ntfy/attachments
 ingress:
   enabled: true
   className: contour
@@ -17,3 +21,5 @@ ingress:
    - secretName: ntfy-tls
      hosts:
        - ntfy.rabarbra.me
+persistence:
+  enabled: true

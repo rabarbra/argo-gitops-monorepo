@@ -1,0 +1,17 @@
+ntfy:
+  baseURL: "https://ntfy.rabarbra.me"
+ingress:
+  enabled: true
+  className: contour
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: ntfy.rabarbra.me
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+   - secretName: ntfy-tls
+     hosts:
+       - ntfy.rabarbra.me

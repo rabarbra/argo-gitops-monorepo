@@ -5,6 +5,6 @@ metadata:
 name: ntfy
 version: 0.4.6
 namespace: ntfy
-repo: oci://codeberg.org/wrenix/helm-charts/ntfy
+repo: oci://codeberg.org/wrenix/helm-charts/
 valuesFile: ../../../../base/apps/ntfy/values.yaml
 includeCRDs: true

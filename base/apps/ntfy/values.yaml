@@ -1,7 +1,5 @@
 ntfy:
   baseURL: "https://ntfy.rabarbra.me"
-  cache:
-    file: /data/cache.db
   attachment:
     cacheDir: /data
 ingress:

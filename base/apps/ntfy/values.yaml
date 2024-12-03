@@ -3,7 +3,7 @@ ntfy:
   cache:
     file: /data/cache.db
   attachment:
-    cacheDir: /data/attachments
+    cacheDir: /data
 ingress:
   enabled: true
   className: contour

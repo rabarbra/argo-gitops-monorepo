@@ -1,0 +1,10 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: base
+name: longhorn
+version: 1.7.2
+namespace: longhorn
+repo: https://charts.longhorn.io
+valuesFile: ../../../../base/infra/longhorn/values.yaml
+includeCRDs: true

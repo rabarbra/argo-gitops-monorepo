@@ -7,4 +7,6 @@ version: 0.4.6
 namespace: ntfy
 repo: oci://codeberg.org/wrenix/helm-charts/
 valuesFile: ../../../../base/apps/ntfy/values.yaml
+valuesInline:
+  fullnameOverride: ntfy
 includeCRDs: true

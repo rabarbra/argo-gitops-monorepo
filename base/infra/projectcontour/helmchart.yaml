@@ -6,5 +6,5 @@ name: contour
 version: 19.3.1
 namespace: projectcontour
 repo: https://charts.bitnami.com/bitnami
-valuesFile: ../../../../base/infra/contour/values.yaml
+valuesFile: ../../../../base/infra/projectcontour/values.yaml
 includeCRDs: true

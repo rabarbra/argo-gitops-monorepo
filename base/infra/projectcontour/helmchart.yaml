@@ -5,6 +5,6 @@ metadata:
 name: contour
 version: 19.3.2
 namespace: projectcontour
-repo: https://charts.bitnami.com/bitnami
+repo: https://charts.bitnami.com/bitnami/
 valuesFile: ../../../../base/infra/projectcontour/values.yaml
 includeCRDs: true

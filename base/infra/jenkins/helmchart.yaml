@@ -1,0 +1,12 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: base
+name: jenkinsci
+version: 5.7.21
+namespace: jenkins
+repo: https://charts.jenkins.io
+valuesFile: ../../../../base/infra/jenkins/values.yaml
+valuesInline:
+  fullnameOverride: jenkins
+includeCRDs: true

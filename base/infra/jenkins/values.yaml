@@ -1,0 +1,13 @@
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      ingress.kubernetes.io/force-ssl-redirect: "true"
+      kubernetes.io/tls-acme: "true"
+    path: /
+    hostName: jenkins.rabarbra.me
+    resourceRootUrl:
+    tls:
+    - secretName: jenkins-tls
+      hosts:
+        - jenkins.rabarbra.me

@@ -11,6 +11,8 @@ spec:
       revision: HEAD
       directories:
         - path: 'clusters/*/*/*'
+        - path: 'clusters/*/*/disabled'
+          exclude: true
       values:
         clusterName: '{{index .path.segments 1}}'
         projectName: '{{index .path.segments 2}}'

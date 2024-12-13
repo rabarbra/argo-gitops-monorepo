@@ -2,7 +2,7 @@ apiVersion: builtin
 kind: HelmChartInflationGenerator
 metadata:
   name: base
-name: jenkinsci
+name: jenkins
 version: 5.7.21
 namespace: jenkins
 repo: https://charts.jenkins.io

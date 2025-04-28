@@ -12,3 +12,18 @@ ingress:
       - secretName: paperless-ngx-tls
         hosts:
           - papers.rabarbra.me
+persistence:
+  export:
+    enabled: true
+    retain: true
+    mountPath: /usr/src/paperless/export
+    storageClass: "nfs-client"
+    accessMode: ReadWriteOnce
+    size: 1Gi
+  consume:
+    enabled: true
+    retain: true
+    mountPath: /usr/src/paperless/consume
+    storageClass: "nfs-client"
+    accessMode: ReadWriteOnce
+    size: 4Gi

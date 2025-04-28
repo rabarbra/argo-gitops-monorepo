@@ -8,7 +8,7 @@ helmCharts:
 - name: contour
   namespace: projectcontour
   version: 19.5.11
-  repo: https://charts.bitnami.com/bitnami/
+  repo: oci://registry-1.docker.io/bitnamicharts/
   valuesFile: ../../../../base/infra/projectcontour/values.yaml
   valuesInline:
      fullnameOverride: contour

@@ -1,19 +1,23 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
 
 namespace: projectcontour
 resources:
-  - helmchart.yaml
+  - namespace.yaml
 
-patches:
-  - target:
-      kind: HelmChartInflationGenerator
-      name: base
-    patch: |-
-      [
-        {
-          "op": "add",
-          "path": "/additionalValuesFiles",
-          "value": ["values.yaml"]
-        }
-      ]
+# --------------------------------------------
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+
+# components:
+# - ../../../../base/infra/projectcontour
+
+# helmCharts:
+# - name: contour
+#   namespace: projectcontour
+#   version: 19.5.11
+#   repo: https://charts.bitnami.com/bitnami/
+#   valuesFile: ../../../../base/infra/projectcontour/values.yaml
+#   valuesInline:
+#      fullnameOverride: contour
+#   includeCRDs: true

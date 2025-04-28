@@ -1,5 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-generators:
-- ../../../../base/infra/projectcontour/
+components:
+- ../../../../base/infra/projectcontour
+
+helmCharts:
+- name: contour
+  namespace: projectcontour
+  version: 19.5.11
+  repo: https://charts.bitnami.com/bitnami/
+  valuesFile: ../../../../base/infra/projectcontour/values.yaml
+  valuesInline:
+     fullnameOverride: contour
+  includeCRDs: true

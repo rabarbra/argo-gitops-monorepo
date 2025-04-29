@@ -28,6 +28,6 @@ persistence:
     accessMode: ReadWriteOnce
     size: 4Gi
 redis:
-  enabled: false
+  enabled: true
   auth:
     enabled: false

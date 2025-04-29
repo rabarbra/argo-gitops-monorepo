@@ -5,10 +5,10 @@ components:
 - ../../../../base/apps/paperless-ngx
 
 helmCharts:
-- name: paperless-ngx
+- name: paperless
   namespace: paperless-ngx
-  version: 0.24.1
-  repo: https://charts.gabe565.com
+  version: 9.86.0
+  repo: https://zekker6.github.io/helm-charts/
   valuesFile: ../../../../base/apps/paperless-ngx/values.yaml
   releaseName: ""
   valuesInline:

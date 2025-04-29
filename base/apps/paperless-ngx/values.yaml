@@ -27,3 +27,7 @@ persistence:
     storageClass: "nfs-client"
     accessMode: ReadWriteOnce
     size: 4Gi
+redis:
+  enabled: false
+  auth:
+    enabled: false

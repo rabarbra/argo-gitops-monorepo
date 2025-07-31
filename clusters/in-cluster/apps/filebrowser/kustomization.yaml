@@ -10,7 +10,7 @@ helmCharts:
   version: 1.0.0
   repo: https://utkuozdemir.org/helm-charts
   valuesFile: ../../../../base/apps/filebrowser/values.yaml
-  releaseName: ""
+  releaseName: "paperless-ngx"
   valuesInline:
      fullnameOverride: filebrowser
   includeCRDs: true

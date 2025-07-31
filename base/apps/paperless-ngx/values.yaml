@@ -27,6 +27,9 @@ persistence:
     storageClass: "nfs-client"
     accessMode: ReadWriteOnce
     size: 4Gi
+config:
+  redis:
+    url: "redis://paperless-ngx-redis-master:6379"
 redis:
   enabled: true
   architecture: standalone

@@ -5,5 +5,9 @@ persistence:
 storageClass:
   name: nfs-client
   defaultClass: true
+  mountOptions:
+    - soft
+    - retrans=2
+    - timeo=30
 nodeSelector:
   node-role.kubernetes.io/master: "true"

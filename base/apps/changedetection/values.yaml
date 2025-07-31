@@ -1,0 +1,17 @@
+ingress:
+  main:
+    enabled: false
+    className: contour
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      kubernetes.io/ingress.class: contour
+    hosts:
+      - host: change.rabarbra.me
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+    - secretName: filebrowser-tls
+      hosts:
+        - change.rabarbra.me
+

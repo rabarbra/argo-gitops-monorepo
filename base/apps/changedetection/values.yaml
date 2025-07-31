@@ -1,6 +1,6 @@
 ingress:
   main:
-    enabled: false
+    enabled: true
     className: contour
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
@@ -14,4 +14,3 @@ ingress:
     - secretName: filebrowser-tls
       hosts:
         - change.rabarbra.me
-

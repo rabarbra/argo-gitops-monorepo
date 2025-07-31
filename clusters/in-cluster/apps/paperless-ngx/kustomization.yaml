@@ -10,7 +10,6 @@ helmCharts:
   version: 9.86.0
   repo: https://zekker6.github.io/helm-charts/
   valuesFile: ../../../../base/apps/paperless-ngx/values.yaml
-  releaseName: ""
   valuesInline:
      fullnameOverride: paperless-ngx
   includeCRDs: true

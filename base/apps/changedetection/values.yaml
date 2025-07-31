@@ -14,3 +14,14 @@ ingress:
     - secretName: filebrowser-tls
       hosts:
         - change.rabarbra.me
+persistence:
+  config:
+    enabled: true
+    type: pvc
+    mountPath: /datastore
+    readOnly: false
+    storageClass: "nfs-client"
+    accessMode: ReadWriteOnce
+    size: 20Mi
+    retain: false
+

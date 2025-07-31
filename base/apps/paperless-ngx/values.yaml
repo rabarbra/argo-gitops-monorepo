@@ -29,5 +29,14 @@ persistence:
     size: 4Gi
 redis:
   enabled: true
+  architecture: standalone
   auth:
     enabled: false
+  global:
+    storageClass: "nfs-client"
+  master:
+    persistence:
+      enabled: false
+  replica:
+    persistence:
+      enabled: false

@@ -54,7 +54,6 @@ vikunja:
 # Please refer to PostgreSQL subchart for a full list of possible values
 # https://github.com/bitnami/charts/tree/main/bitnami/postgresql/#parameters
 postgresql:
-  releaseName: vikunja
   enabled: true
   primary:
     networkPolicy:
@@ -66,7 +65,6 @@ postgresql:
 # Please refer to Redis subchart for a full list of possible values
 # https://github.com/bitnami/charts/tree/main/bitnami/redis/#parameters
 redis:
-  releaseName: vikunja
   enabled: true
   architecture: standalone
   auth:
@@ -84,4 +82,3 @@ typesense:
       accessMode: ReadWriteOnce
       size: 1Gi
       storageClass: "nfs-client"
-fullnameOverride: vikunja

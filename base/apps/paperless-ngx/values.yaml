@@ -29,9 +29,9 @@ persistence:
     size: 4Gi
 config:
   redis:
-    url: "redis://redis-master:6379"
+    url: "redis://release-name-redis-master:6379"
 env:
-  PAPERLESS_REDIS: "redis://redis-master:6379"
+  PAPERLESS_REDIS: "redis://release-name-redis-master:6379"
 redis:
   enabled: true
   architecture: standalone

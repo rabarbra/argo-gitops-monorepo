@@ -10,7 +10,5 @@ helmCharts:
   version: 1.0.0
   repo: oci://ghcr.io/go-vikunja/helm-chart
   valuesFile: ../../../../base/apps/vikunja/values.yaml
-  releaseName: "vikunja"
-  valuesInline:
-     fullnameOverride: vikunja
+  releaseName: "release-name"
   includeCRDs: true

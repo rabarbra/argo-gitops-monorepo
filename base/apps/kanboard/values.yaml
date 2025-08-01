@@ -1,0 +1,33 @@
+application:
+  port: 80
+  additionalLabels: {}
+  persistence:
+    enabled: true
+    persistentVolumeClaim:
+      name: kanboard-pvc
+      create: true
+      storageClass: "nfs-client"
+      size: 10Mi
+      accessMode: ReadWriteMany
+
+nodePort:
+  enabled: false
+  port: ~
+
+clusterip:
+  enabled: false
+  port: 8080
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: contour
+  hosts:
+    - host: kanboard.rabarbra.me
+      paths:
+        - path: /
+  tls:
+    - secretName: kanboard-tls
+      hosts:
+        - kanboard.rabarbra.me

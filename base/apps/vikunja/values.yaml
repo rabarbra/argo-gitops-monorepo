@@ -29,10 +29,6 @@ vikunja:
       enabled: true
       data:
         config.yml: |
-          typesense:
-            # Typesense will only work if it is enabled below (typesense.enabled).
-            url: "{{ printf "%s-typesense" .Release.Name }}:8108"
-            apiKey: "{{ .Values.typesense.env.TYPESENSE_API_KEY }}"
           redis:
             # Redis will only work if it is enabled below (redis.enabled).
             host: "{{ printf "%s-redis-master" .Release.Name }}:6379"
@@ -75,7 +71,7 @@ redis:
     enabled: false
 
 typesense:
-  enabled: true
+  enabled: false
   env:
     TYPESENSE_DATA_DIR: /data
     TYPESENSE_API_KEY: typesense

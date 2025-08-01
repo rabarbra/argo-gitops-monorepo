@@ -1,0 +1,88 @@
+######################
+# VIKUNJA COMPONENTS #
+######################
+vikunja:
+  persistence:
+    data:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 10Gi
+      mountPath: /app/vikunja/files
+      storageClass: "nfs-client"
+  ingress:
+    main:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        kubernetes.io/ingress.class: contour
+      hosts:
+        - host: tasks.rabarbra.me
+          paths:
+            - path: /
+      tls:
+        - secretName: vikunja-tls
+          hosts:
+            - tasks.rabarbra.me
+
+  configMaps:
+    api-config:
+      enabled: true
+      data:
+        config.yml: |
+          typesense:
+            # Typesense will only work if it is enabled below (typesense.enabled).
+            url: "{{ printf "%s-typesense" .Release.Name }}:8108"
+            apiKey: "{{ .Values.typesense.env.TYPESENSE_API_KEY }}"
+          redis:
+            # Redis will only work if it is enabled below (redis.enabled).
+            host: "{{ printf "%s-redis-master" .Release.Name }}:6379"
+            db: "{{ .Release.Name }}"
+  env:
+    # To utilize a secret in the environment variables, you can do something like the following: https://github.com/bjw-s/helm-charts/blob/a081de53024d8328d1ae9ff7e4f6bc500b0f3a29/charts/library/common/values.yaml#L141-L145
+    # You could also use MySQL or SQLite, but we recommend PostgreSQL.
+    # https://vikunja.io/docs/config-options/#type
+    VIKUNJA_DATABASE_TYPE: "postgres"
+    VIKUNJA_DATABASE_USER: "{{ coalesce .Values.postgresql.global.postgresql.auth.username .Values.postgresql.auth.username }}"
+    VIKUNJA_DATABASE_PASSWORD: "{{ coalesce .Values.postgresql.global.postgresql.auth.password .Values.postgresql.auth.password }}"
+    VIKUNJA_DATABASE_NAME: "{{ coalesce .Values.postgresql.global.postgresql.auth.database .Values.postgresql.auth.database }}"
+
+##########################
+# END VIKUNJA COMPONENTS #
+##########################
+
+# Optional Dependencies
+
+#  ┬─┐┌─┐┐─┐┌┐┐┌─┐┬─┐┬─┐┐─┐┐─┐┬
+#  │─┘│ │└─┐ │ │ ┬│┬┘├─ └─┐│ ││
+#  ┘  ┘─┘──┘ ┘ ┘─┘┘└┘┴─┘──┘└─\┘─┘
+# Please refer to PostgreSQL subchart for a full list of possible values
+# https://github.com/bitnami/charts/tree/main/bitnami/postgresql/#parameters
+postgresql:
+  enabled: true
+  primary:
+    networkPolicy:
+      enabled: false
+
+#  ┬─┐┬─┐┬─┐o┐─┐
+#  │┬┘├─ │ ││└─┐
+#  ┘└┘┴─┘┘─┘┘──┘
+# Please refer to Redis subchart for a full list of possible values
+# https://github.com/bitnami/charts/tree/main/bitnami/redis/#parameters
+redis:
+  enabled: true
+  architecture: standalone
+  auth:
+    enabled: false
+
+typesense:
+  enabled: true
+  env:
+    TYPESENSE_DATA_DIR: /data
+    TYPESENSE_API_KEY: typesense
+  persistence:
+    data:
+      # Enabling typesense persistence is recommended to avoid slow reindexing
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 1Gi
+      storageClass: "nfs-client"

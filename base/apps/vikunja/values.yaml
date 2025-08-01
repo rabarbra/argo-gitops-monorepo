@@ -29,6 +29,12 @@ vikunja:
       enabled: true
       data:
         config.yml: |
+          database:
+            type: "postgres"
+            host: "{{ printf "%s-postgresql" .Release.Name }}"
+            user: "{{ coalesce .Values.postgresql.global.postgresql.auth.username .Values.postgresql.auth.username }}"
+            password: "{{ coalesce .Values.postgresql.global.postgresql.auth.password .Values.postgresql.auth.password }}"
+            database: "{{ coalesce .Values.postgresql.global.postgresql.auth.database .Values.postgresql.auth.database }}"
           redis:
             # Redis will only work if it is enabled below (redis.enabled).
             host: "{{ printf "%s-redis-master" .Release.Name }}:6379"

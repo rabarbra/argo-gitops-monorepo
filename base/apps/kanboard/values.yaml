@@ -20,6 +20,7 @@ clusterip:
 
 ingress:
   enabled: true
+  ingressClassName: "contour"
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     kubernetes.io/ingress.class: contour

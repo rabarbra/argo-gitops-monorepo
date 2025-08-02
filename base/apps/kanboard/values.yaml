@@ -25,7 +25,7 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     kubernetes.io/ingress.class: contour
   host: kanboard.rabarbra.me
-  tls: |
+  tls:
     - secretName: kanboard-tls
       hosts:
         - kanboard.rabarbra.me

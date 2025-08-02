@@ -10,8 +10,8 @@ spec:
       name: letsencrypt-prod-private-key
     solvers:
     - dns01:
-      cloudflare:
-        email: rabarbrablad@gmail.com
-        apiKeySecretRef:
-          name: cloudflare-api-token
-          key: api-token
+        cloudflare:
+          email: rabarbrablad@gmail.com
+          apiKeySecretRef:
+            name: cloudflare-api-token
+            key: api-token

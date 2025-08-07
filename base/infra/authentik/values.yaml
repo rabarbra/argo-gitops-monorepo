@@ -1,0 +1,46 @@
+server:
+  env:
+    - name: AUTHENTIK_POSTGRESQL__PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: authentik-creds
+          key: password
+    - name: AUTHENTIK_SECRET_KEY
+      valueFrom:
+        secretKeyRef:
+          name: authentik-creds
+          key: secret_key
+  ingress:
+    enabled: true
+    ingressClassName: contour
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      kubernetes.io/ingress.class: contour
+    hosts:
+      - authentik.rabarbra.me
+    tls:
+      - secretName: authentik-tls
+        hosts:
+          - authentik.rabarbra.me
+
+worker:
+  env:
+    - name: AUTHENTIK_POSTGRESQL__PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: authentik-creds
+          key: password
+    - name: AUTHENTIK_SECRET_KEY
+      valueFrom:
+        secretKeyRef:
+          name: authentik-creds
+          key: secret_key
+
+
+postgresql:
+  enabled: true
+  auth:
+    existingSecret: authentik-creds
+
+redis:
+  enabled: true

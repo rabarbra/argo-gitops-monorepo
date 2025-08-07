@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+namespace: homarr
+resources:
+  - namespace.yaml
+
+# --------------------------------------------
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+
+# components:
+# - ../../../../base/apps/homarr
+
+# helmCharts:
+# - name: homarr
+#   namespace: homarr
+#   version: 1.0.2
+#   repo: oci://ghcr.io/homarr-labs/charts/homarr
+#   valuesFile: ../../../../base/apps/homarr/values.yaml
+#   releaseName: ""
+#   valuesInline:
+#      fullnameOverride: homarr
+#   includeCRDs: true

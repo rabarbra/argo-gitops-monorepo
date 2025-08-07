@@ -16,7 +16,7 @@ resources:
 # - name: homarr
 #   namespace: homarr
 #   version: 5.6.0
-#   repo: https://homarr-labs.github.io/helm-charts/
+#   repo: https://homarr-labs.github.io/charts/
 #   valuesFile: ../../../../base/apps/homarr/values.yaml
 #   releaseName: ""
 #   valuesInline:

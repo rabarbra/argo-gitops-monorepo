@@ -15,7 +15,7 @@ resources:
 # helmCharts:
 # - name: homarr
 #   namespace: homarr
-#   version: 1.0.2
+#   version: 5.6.0
 #   repo: oci://ghcr.io/homarr-labs/charts/homarr
 #   valuesFile: ../../../../base/apps/homarr/values.yaml
 #   releaseName: ""

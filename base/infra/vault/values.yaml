@@ -20,7 +20,7 @@ server:
     enabled: true
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
-    ingressClassName: contour
+    ingressClassName: traefik
     pathType: Prefix
     activeService: true
     hosts:

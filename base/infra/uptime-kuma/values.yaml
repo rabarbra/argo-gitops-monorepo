@@ -2,7 +2,7 @@ nodeSelector:
   node-role.kubernetes.io/master: "true"
 ingress:
   enabled: true
-  ingressClassName: "contour"
+  ingressClassName: "traefik"
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     ingress.kubernetes.io/force-ssl-redirect: "true"

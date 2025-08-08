@@ -4,12 +4,11 @@ ntfy:
     cacheDir: /data
 ingress:
   enabled: true
-  className: contour
+  className: traefik
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     ingress.kubernetes.io/force-ssl-redirect: "true"
     kubernetes.io/tls-acme: "true"
-    projectcontour.io/websocket-routes: "/"
   hosts:
     - host: ntfy.rabarbra.me
       paths:

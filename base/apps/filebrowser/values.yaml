@@ -1,9 +1,8 @@
 ingress:
   enabled: true
-  className: contour
+  className: traefik
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    kubernetes.io/ingress.class: contour
+    kubernetes.io/ingress.class: traefik
   hosts:
     - host: files.rabarbra.me
       paths:

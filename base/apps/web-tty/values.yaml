@@ -2,10 +2,9 @@ image:
   pullPolicy: Always
 ingress:
   enabled: true
-  className: contour
+  className: traefik
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    projectcontour.io/websocket-routes: "/"
   hosts:
     - host: sh.rabarbra.me
       paths:

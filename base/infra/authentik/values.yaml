@@ -12,10 +12,10 @@ server:
           key: secret_key
   ingress:
     enabled: true
-    ingressClassName: contour
+    ingressClassName: traefik
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
-      kubernetes.io/ingress.class: contour
+      kubernetes.io/ingress.class: traefik
     hosts:
       - authentik.rabarbra.me
     tls:

@@ -4,6 +4,7 @@ kind: Component
 namespace: authentik
 resources:
   - namespace.yaml
+  - middleware.yaml
 
 # --------------------------------------------
 # apiVersion: kustomize.config.k8s.io/v1beta1

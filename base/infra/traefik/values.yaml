@@ -4,6 +4,9 @@ ingressRoute:
     matchRule: Host(`traefik.rabarbra.me`)
     entryPoints:
       - web
+    middlewares:
+      - name: authentik
+        namespace: authentik
 providers:
   kubernetesCRD:
     allowCrossNamespace: true

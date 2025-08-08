@@ -5,6 +5,8 @@ ingressRoute:
     entryPoints:
       - web
 providers:
+  kubernetesCRD:
+    allowCrossNamespace: true
   kubernetesGateway:
     enabled: true
 gateway:

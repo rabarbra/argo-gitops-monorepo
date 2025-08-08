@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+namespace: traefik
+resources:
+  - namespace.yaml
+
+# --------------------------------------------
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+
+# components:
+# - ../../../../base/infra/traefik
+
+# helmCharts:
+# - name: traefik
+#   namespace: traefik
+#   version: 37.0.0
+#   repo: https://traefik.github.io/charts
+#   valuesFile: ../../../../base/infra/traefik/values.yaml
+#   releaseName: ""
+#   valuesInline:
+#      fullnameOverride: traefik
+#   includeCRDs: true

@@ -7,7 +7,6 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     ingress.kubernetes.io/force-ssl-redirect: "true"
     kubernetes.io/tls-acme: "true"
-    projectcontour.io/websocket-routes: "/"
   hosts:
     - host: uptime.rabarbra.me
       paths:

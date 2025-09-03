@@ -33,11 +33,12 @@ podSecurityContext:
   fsGroup: 1000
   fsGroupChangePolicy: OnRootMismatch
 
-env:
-  - name: FORGEJO_CUSTOM
-    value: /custom
-  - name: GITEA_CUSTOM
-    value: /custom 
+deployment:
+  env:
+    - name: FORGEJO_CUSTOM
+      value: /custom
+    - name: GITEA_CUSTOM
+      value: /custom
 
 gitea:
   config:

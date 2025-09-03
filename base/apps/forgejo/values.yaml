@@ -10,7 +10,7 @@ ingress:
         - path: /
           pathType: Prefix
   tls:
-    - secretName: forgejo-tls
+    - secretName: gitea-tls
       hosts:
         - git.rabarbra.me
 

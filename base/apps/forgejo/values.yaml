@@ -8,6 +8,7 @@ ingress:
     - host: git.rabarbra.me
       paths:
         - path: /
+          pathType: Prefix
   tls:
     - secretName: forgejo-tls
       hosts:

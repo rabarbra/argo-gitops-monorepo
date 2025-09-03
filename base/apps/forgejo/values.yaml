@@ -70,21 +70,17 @@ extraEnv:
     value: "nord"
 
 extraVolumes:
-  # 1) Create the /custom tree inside the container
   - name: forgejo-custom
     emptyDir: {}
 
-  # 2) Your themes Secret (unchanged)
   - name: forgejo-themes
     secret:
       secretName: forgejo-themes
 
 extraContainerVolumeMounts:
-  # Mount the base /custom dir so parents exist
   - name: forgejo-custom
     mountPath: /custom
 
-  # Mount the Secret exactly where Forgejo expects themes
   - name: forgejo-themes
     readOnly: true
     mountPath: /custom/public/assets/css

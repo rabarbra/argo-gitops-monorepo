@@ -23,7 +23,7 @@ secretGenerator:
       - themes/theme-maroon.css
       - themes/theme-nord-sainnhe.css
       - themes/theme-nord.css
-      - themes/theme-orgnizr.css
+      - themes/theme-organizr.css
       - themes/theme-overseerr.css
       - themes/theme-palenight.css
       - themes/theme-plex.css

@@ -15,3 +15,7 @@ providers:
     enabled: true
 gateway:
   namespacePolicy: All
+ports:
+  forgejo-ssh:
+    port: 2222
+    expose: true

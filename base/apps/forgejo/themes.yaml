@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: forgejo-themes
+  namespace: forgejo
+type: Opaque
+stringData:
+  # --- Theme Park (simple single-file imports) ---
+  theme-nord.css: |
+    @import "https://theme-park.dev/css/base/gitea/nord.css";
+    :root { --is-dark-theme: true; }  /* helps Forgejo treat as dark */
+  theme-dracula.css: |
+    @import "https://theme-park.dev/css/base/gitea/dracula.css";
+  theme-gruvbox.css: |
+    @import "https://theme-park.dev/css/base/gitea/gruvbox.css";
+
+  # --- Sainnhe pack (direct to compiled dist CSS) ---
+  theme-edge-auto.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-edge-auto.css";
+  theme-edge-dark.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-edge-dark.css";
+  theme-edge-light.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-edge-light.css";
+
+  theme-everforest-auto.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-everforest-auto.css";
+  theme-everforest-dark.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-everforest-dark.css";
+  theme-everforest-light.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-everforest-light.css";
+
+  theme-gruvbox-auto.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-gruvbox-auto.css";
+  theme-gruvbox-dark.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-gruvbox-dark.css";
+  theme-gruvbox-light.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-gruvbox-light.css";
+
+  theme-gruvbox-material-auto.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-gruvbox-material-auto.css";
+  theme-gruvbox-material-dark.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-gruvbox-material-dark.css";
+  theme-gruvbox-material-light.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-gruvbox-material-light.css";
+
+  theme-nord-sainnhe.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-nord.css";
+
+  theme-palenight.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-palenight.css";
+  theme-soft-era.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-soft-era.css";
+
+  theme-sonokai.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-sonokai.css";
+  theme-sonokai-andromeda.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-sonokai-andromeda.css";
+  theme-sonokai-atlantis.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-sonokai-atlantis.css";
+  theme-sonokai-espresso.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-sonokai-espresso.css";
+  theme-sonokai-maia.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-sonokai-maia.css";
+  theme-sonokai-shusia.css: |
+    @import "https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist/theme-sonokai-shusia.css";

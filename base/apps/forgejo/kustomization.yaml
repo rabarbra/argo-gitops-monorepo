@@ -11,8 +11,26 @@ secretGenerator:
   - name: forgejo-themes
     namespace: forgejo
     files:
-      - themes/theme-nord.css
+      - themes/theme-aquamarine.css
+      - themes/theme-dark.css
+      - themes/theme-dracula.css
       - themes/theme-edge-auto.css
+      - themes/theme-everforest-auto.css
+      - themes/theme-gruvbox-auto.css
+      - themes/theme-gruvbox-material-auto.css
+      - themes/theme-hotline.css
+      - themes/theme-hotpink.css
+      - themes/theme-maroon.css
+      - themes/theme-nord-sainnhe.css
+      - themes/theme-nord.css
+      - themes/theme-orgnizr.css
+      - themes/theme-overseerr.css
+      - themes/theme-palenight.css
+      - themes/theme-plex.css
+      - themes/theme-soft-era.css
+      - themes/theme-sonokai.css
+      - themes/theme-sonokai-andromeda.css
+      - themes/theme-space-gray.css
     options:
       disableNameSuffixHash: true
 

@@ -2,7 +2,6 @@ ingress:
   enabled: true
   className: traefik
   annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: authentik-authentik@kubernetescrd
     kubernetes.io/ingress.class: traefik
   hosts:
     - host: git.rabarbra.me
@@ -10,7 +9,7 @@ ingress:
         - path: /
           pathType: Prefix
   tls:
-    - secretName: gitea-tls
+    - secretName: forgejo-tls
       hosts:
         - git.rabarbra.me
 

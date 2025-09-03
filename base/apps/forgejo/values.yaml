@@ -36,6 +36,7 @@ podSecurityContext:
 extraEnv:
   - name: GITEA_CUSTOM
     value: /custom
+
   - name: FORGEJO__ui__THEMES
     value: >-
       forgejo-auto,forgejo-light,forgejo-dark,
@@ -49,15 +50,21 @@ extraEnv:
       gruvbox-material-auto,gruvbox-material-dark,gruvbox-material-light,
       nord-sainnhe,palenight,soft-era,
       sonokai,sonokai-andromeda,sonokai-atlantis,sonokai-espresso,sonokai-maia,sonokai-shusia
+  - name: GITEA__ui__THEMES
+    value: >-
+      forgejo-auto,forgejo-light,forgejo-dark,
+      gitea-auto,gitea-light,gitea-dark,
+      forgejo-auto-deuteranopia-protanopia,forgejo-light-deuteranopia-protanopia,forgejo-dark-deuteranopia-protanopia,
+      forgejo-auto-tritanopia,forgejo-light-tritanopia,forgejo-dark-tritanopia,
+      nord,dracula,gruvbox,
+      edge-auto,edge-dark,edge-light,
+      everforest-auto,everforest-dark,everforest-light,
+      gruvbox-auto,gruvbox-dark,gruvbox-light,
+      gruvbox-material-auto,gruvbox-material-dark,gruvbox-material-light,
+      nord-sainnhe,palenight,soft-era,
+      sonokai,sonokai-andromeda,sonokai-atlantis,sonokai-espresso,sonokai-maia,sonokai-shusia
+
   - name: FORGEJO__ui__DEFAULT_THEME
     value: "nord"
-
-extraVolumes:
-  - name: forgejo-themes
-    secret:
-      secretName: forgejo-themes
-
-extraContainerVolumeMounts:
-  - name: forgejo-themes
-    readOnly: true
-    mountPath: /custom/public/assets/css
+  - name: GITEA__ui__DEFAULT_THEME
+    value: "nord"

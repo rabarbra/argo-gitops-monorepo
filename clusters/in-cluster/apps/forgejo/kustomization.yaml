@@ -8,9 +8,9 @@ helmCharts:
 - name: forgejo
   namespace: forgejo
   version: 14.0.1
-  repo: oci://code.forgejo.org/forgejo-helm/forgejo
+  repo: oci://codeberg.org/forgejo-contrib
   valuesFile: ../../../../base/apps/forgejo/values.yaml
-  releaseName: ""
+  releaseName: forgejo
   valuesInline:
      fullnameOverride: forgejo
   includeCRDs: true

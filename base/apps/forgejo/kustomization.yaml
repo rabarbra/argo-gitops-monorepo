@@ -7,6 +7,17 @@ resources:
   - themes.yaml
   - ssh-route.yaml
 
+secretGenerator:
+  - name: forgejo-themes
+    namespace: forgejo
+    files:
+      - themes/theme-nord.css
+      - themes/theme-edge-auto.css
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+
 # --------------------------------------------
 # apiVersion: kustomize.config.k8s.io/v1beta1
 # kind: Kustomization

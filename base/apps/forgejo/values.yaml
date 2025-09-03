@@ -20,8 +20,19 @@ service:
 
 persistence:
   enabled: true
-  storageClassName: "nfs-client"
+  create: true
+  storageClass: nfs-client
   size: 10Gi
+  accessModes: ["ReadWriteOnce"]
+
+securityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+
+podSecurityContext:
+  fsGroup: 1000
+  fsGroupChangePolicy: OnRootMismatch
+
 
 extraVolumes:
   - name: forgejo-themes

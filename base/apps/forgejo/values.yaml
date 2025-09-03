@@ -72,3 +72,46 @@ extraContainerVolumeMounts:
   - name: forgejo-themes
     readOnly: true
     mountPath: /custom/public/assets/css
+
+extraInitContainers:
+  - name: fetch-themes
+    image: curlimages/curl:8.11.1
+    command: ["/bin/sh","-c"]
+    args:
+      - |
+        set -euo pipefail
+        out="/custom/public/assets/css"
+        mkdir -p "$out"
+        fetch() { curl -fsSL "$1" -o "$out/$2"; }
+
+        # Theme Park
+        fetch https://theme-park.dev/css/base/gitea/nord.css theme-nord.css
+        fetch https://theme-park.dev/css/base/gitea/dracula.css theme-dracula.css
+        fetch https://theme-park.dev/css/base/gitea/gruvbox.css theme-gruvbox.css
+
+        # Sainnhe
+        base=https://git.sainnhe.dev/sainnhe/gitea-themes/raw/branch/master/dist
+        fetch $base/theme-edge-auto.css theme-edge-auto.css
+        fetch $base/theme-edge-dark.css theme-edge-dark.css
+        fetch $base/theme-edge-light.css theme-edge-light.css
+        fetch $base/theme-everforest-auto.css theme-everforest-auto.css
+        fetch $base/theme-everforest-dark.css theme-everforest-dark.css
+        fetch $base/theme-everforest-light.css theme-everforest-light.css
+        fetch $base/theme-gruvbox-auto.css theme-gruvbox-auto.css
+        fetch $base/theme-gruvbox-dark.css theme-gruvbox-dark.css
+        fetch $base/theme-gruvbox-light.css theme-gruvbox-light.css
+        fetch $base/theme-gruvbox-material-auto.css theme-gruvbox-material-auto.css
+        fetch $base/theme-gruvbox-material-dark.css theme-gruvbox-material-dark.css
+        fetch $base/theme-gruvbox-material-light.css theme-gruvbox-material-light.css
+        fetch $base/theme-nord.css theme-nord-sainnhe.css
+        fetch $base/theme-palenight.css theme-palenight.css
+        fetch $base/theme-soft-era.css theme-soft-era.css
+        fetch $base/theme-sonokai.css theme-sonokai.css
+        fetch $base/theme-sonokai-andromeda.css theme-sonokai-andromeda.css
+        fetch $base/theme-sonokai-atlantis.css theme-sonokai-atlantis.css
+        fetch $base/theme-sonokai-espresso.css theme-sonokai-espresso.css
+        fetch $base/theme-sonokai-maia.css theme-sonokai-maia.css
+        fetch $base/theme-sonokai-shusia.css theme-sonokai-shusia.css
+    volumeMounts:
+      - name: forgejo-custom
+        mountPath: /custom

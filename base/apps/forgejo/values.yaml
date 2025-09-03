@@ -1,6 +1,6 @@
 ingress:
   enabled: true
-  ingressClassName: "traefik"
+  className: traefik
   annotations:
     traefik.ingress.kubernetes.io/router.middlewares: authentik-authentik@kubernetescrd
     kubernetes.io/ingress.class: traefik

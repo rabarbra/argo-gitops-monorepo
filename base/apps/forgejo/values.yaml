@@ -33,18 +33,9 @@ podSecurityContext:
   fsGroup: 1000
   fsGroupChangePolicy: OnRootMismatch
 
-
-extraVolumes:
-  - name: forgejo-themes
-    secret:
-      secretName: forgejo-themes
-
-extraVolumeMounts:
-  - name: forgejo-themes
-    readOnly: true
-    mountPath: "/data/gitea/public/assets/css"
-
 extraEnv:
+  - name: GITEA_CUSTOM
+    value: /custom
   - name: FORGEJO__ui__THEMES
     value: >-
       forgejo-auto,forgejo-light,forgejo-dark,
@@ -60,3 +51,13 @@ extraEnv:
       sonokai,sonokai-andromeda,sonokai-atlantis,sonokai-espresso,sonokai-maia,sonokai-shusia
   - name: FORGEJO__ui__DEFAULT_THEME
     value: "nord"
+
+extraVolumes:
+  - name: forgejo-themes
+    secret:
+      secretName: forgejo-themes
+
+extraContainerVolumeMounts:
+  - name: forgejo-themes
+    readOnly: true
+    mountPath: /custom/public/assets/css

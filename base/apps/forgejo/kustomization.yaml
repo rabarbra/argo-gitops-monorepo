@@ -13,7 +13,6 @@ secretGenerator:
     files:
       - themes/theme-nord.css
       - themes/theme-edge-auto.css
-    behavior: replace
     options:
       disableNameSuffixHash: true
 

@@ -4,8 +4,8 @@ kind: Component
 namespace: forgejo
 resources:
   - namespace.yaml
-  - themes.yaml
   - ssh-route.yaml
+  # - themes.yaml
 
 secretGenerator:
   - name: forgejo-themes

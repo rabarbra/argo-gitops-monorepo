@@ -60,7 +60,7 @@ gitea:
         maroon,
         nord-sainnhe,
         nord,
-        orgnizr,
+        organizr,
         overseerr,
         palenight,
         plex,
@@ -68,8 +68,7 @@ gitea:
         sonokai,
         sonokai-andromeda,
         space-gray,
-        space-gray
-      DEFAULT_THEME: nord
+      DEFAULT_THEME: nord-sainnhe
 
 extraVolumes:
   - name: forgejo-custom

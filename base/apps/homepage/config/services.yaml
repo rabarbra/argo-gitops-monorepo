@@ -1,12 +1,4 @@
 - Platform:
-  - Authentik:
-      href: https://authentik.rabarbra.me
-      icon: authentik.png
-      widgets:
-        - type: authentik
-          url: https://authentik.rabarbra.me
-          key: "{{HOMEPAGE_VAR_AUTHENTIK_TOKEN}}"
-          version: "2025.6.4"
   - Forgejo:
       href: https://git.rabarbra.me
       icon: gitea.png

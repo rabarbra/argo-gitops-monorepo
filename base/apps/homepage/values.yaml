@@ -15,6 +15,13 @@ ingress:
       hosts:
         - h.rabarbra.me
 
+config:
+  allowedHosts:
+    - h.rabarbra.me
+extraEnvFrom:
+  - secretRef:
+      name: homepage-secrets
+
 volumes:
   - name: homepage-config
     configMap:

@@ -1,4 +1,67 @@
-- Cluster:
-    - Argo CD:
-        href: https://argo.rabarbra.me/
-        icon: argo-cd
+- Platform:
+  - Argo CD:
+      href: https://argo.rabarbra.me
+      icon: argocd.png
+      widgets:
+        - type: argocd
+          url: https://argo.rabarbra.me
+          username: "{{HOMEPAGE_VAR_ARGOCD_USER}}"
+          password: "{{HOMEPAGE_VAR_ARGOCD_PASS}}"
+          fields: ["apps", "sync", "degraded"]
+  - Authentik:
+      href: https://authentik.rabarbra.me
+      icon: authentik.png
+      widgets:
+        - type: authentik
+          url: https://authentik.rabarbra.me
+          key: "{{HOMEPAGE_VAR_AUTHENTIK_TOKEN}}"
+          version: "2025.6.4"
+  - Traefik:
+      href: https://traefik.rabarbra.me
+      icon: traefik.png
+      widgets:
+        - type: traefik
+          url: https://traefik.rabarbra.me
+          dashboard: true
+          fields: ["routers","services","middlewares"]
+  - Forgejo:
+      href: https://git.rabarbra.me
+      icon: gitea.png
+      widgets:
+        - type: gitea
+          url: https://git.rabarbra.me
+          key: "{{HOMEPAGE_VAR_GITEA_TOKEN}}"
+          fields: ["notifications","issues","pulls"]
+  - Changedetection.io:
+      href: https://change.rabarbra.me
+      icon: changedetectionio.png
+      widgets:
+        - type: changedetectionio
+          url: https://change.rabarbra.me
+          key: "{{HOMEPAGE_VAR_CHANGEDETECTION_KEY}}"
+          fields: ["diffsDetected","totalObserved"]
+  - Filebrowser:
+      href: https://files.rabarbra.me
+      icon: filebrowser.png
+      widgets:
+        - type: filebrowser
+          url: https://files.rabarbra.me
+          username: "{{HOMEPAGE_VAR_FILEBROWSER_USER}}"
+          password: "{{HOMEPAGE_VAR_FILEBROWSER_PASS}}"
+  - Paperless-ngx:
+      href: https://papers.rabarbra.me
+      icon: paperless-ngx.png
+      widgets:
+        - type: paperlessngx
+          url: https://papers.rabarbra.me
+          key: "{{HOMEPAGE_VAR_PAPERLESS_TOKEN}}"
+          fields: ["total","inbox"]
+  - Vikunja:
+      href: https://tasks.rabarbra.me
+      icon: vikunja.png
+      widgets:
+        - type: vikunja
+          url: https://tasks.rabarbra.me
+          key: "{{HOMEPAGE_VAR_VIKUNJA_KEY}}"
+          enableTaskList: true
+          fields: ["projects","tasks7d","tasksOverdue","tasksInProgress"]

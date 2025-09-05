@@ -17,7 +17,6 @@
           fields: ["notifications","issues","pulls"]
   - Changedetection.io:
       href: https://change.rabarbra.me
-      icon: changedetectionio.png
       widgets:
         - type: changedetectionio
           url: https://change.rabarbra.me

@@ -6,8 +6,8 @@
 
 - openmeteo:
     label: Wolfsburg
-    latitude: 52,4245
-    longitude: 10,7815
+    latitude: 52.4245
+    longitude: 10.7815
     units: metric
     cache: 5
 

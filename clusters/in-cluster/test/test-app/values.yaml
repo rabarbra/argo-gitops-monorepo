@@ -1,7 +1,7 @@
 replicaCount: 1
 ingress:
   enabled: true
-  ingressClassName: contour
+  ingressClassName: traefik
   hosts:
     - host: test-app.rabarbra.me
       paths:

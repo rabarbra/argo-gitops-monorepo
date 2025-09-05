@@ -24,11 +24,3 @@
       memory: true
       showLabel: true
 
-- calendar:
-    view: monthly
-    maxEvents: 10
-    showTime: true
-    integrations:
-      - type: ical
-        url: "{{HOMEPAGE_VAR_ICAL_URL}}"
-        name: Personal

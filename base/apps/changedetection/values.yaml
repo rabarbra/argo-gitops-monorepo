@@ -3,6 +3,7 @@ ingress:
     enabled: true
     ingressClassName: traefik
     annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
       kubernetes.io/ingress.class: traefik
     hosts:
       - host: change.rabarbra.me

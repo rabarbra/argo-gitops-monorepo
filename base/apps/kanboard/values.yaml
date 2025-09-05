@@ -23,6 +23,7 @@ ingress:
   ingressClassName: "traefik"
   annotations:
     kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   host: kanboard.rabarbra.me
   tls:
     - secretName: kanboard-tls

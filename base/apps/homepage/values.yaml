@@ -14,3 +14,25 @@ ingress:
     - secretName: homepage-tls
       hosts:
         - h.rabarbra.me
+
+volumes:
+  - name: homepage-config
+    configMap:
+      name: homepage-config
+
+volumeMounts:
+  - name: homepage-config
+    mountPath: /app/config/kubernetes.yaml
+    subPath: kubernetes.yaml
+  - name: homepage-config
+    mountPath: /app/config/settings.yaml
+    subPath: settings.yaml
+  - name: homepage-config
+    mountPath: /app/config/services.yaml
+    subPath: services.yaml
+  - name: homepage-config
+    mountPath: /app/config/widgets.yaml
+    subPath: widgets.yaml
+  - name: homepage-config
+    mountPath: /app/config/bookmarks.yaml
+    subPath: bookmarks.yaml

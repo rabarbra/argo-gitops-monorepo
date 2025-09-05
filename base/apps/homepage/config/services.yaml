@@ -1,0 +1,4 @@
+- Cluster:
+    - Argo CD:
+        href: https://argo.rabarbra.me/
+        icon: argo-cd

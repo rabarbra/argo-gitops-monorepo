@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+components:
+- ../../../../base/apps/homepage
+
+helmCharts:
+- name: homepage
+  namespace: homepage
+  version: 4.1.4
+  repo: oci://ghcr.io/m0nsterrr/helm-charts/
+  valuesFile: ../../../../base/apps/homepage/values.yaml
+  releaseName: ""
+  valuesInline:
+     fullnameOverride: homepage
+  includeCRDs: true

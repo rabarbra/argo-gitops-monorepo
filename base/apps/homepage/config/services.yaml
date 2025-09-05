@@ -1,13 +1,4 @@
 - Platform:
-  - Argo CD:
-      href: https://argo.rabarbra.me
-      icon: argocd.png
-      widgets:
-        - type: argocd
-          url: https://argo.rabarbra.me
-          username: "{{HOMEPAGE_VAR_ARGOCD_USER}}"
-          password: "{{HOMEPAGE_VAR_ARGOCD_PASS}}"
-          fields: ["apps", "sync", "degraded"]
   - Authentik:
       href: https://authentik.rabarbra.me
       icon: authentik.png
@@ -16,14 +7,6 @@
           url: https://authentik.rabarbra.me
           key: "{{HOMEPAGE_VAR_AUTHENTIK_TOKEN}}"
           version: "2025.6.4"
-  - Traefik:
-      href: https://traefik.rabarbra.me
-      icon: traefik.png
-      widgets:
-        - type: traefik
-          url: https://traefik.rabarbra.me
-          dashboard: true
-          fields: ["routers","services","middlewares"]
   - Forgejo:
       href: https://git.rabarbra.me
       icon: gitea.png

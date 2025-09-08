@@ -1,0 +1,68 @@
+
+runner:
+  config:
+    # -- create a secret by run: forgejo-runner register --no-interactive --token {TOKEN} --name runner --instance https://next.forgejo.org
+    create: true
+    # -- use existingSecret instatt
+    existingSecret: ""
+
+    # -- Secret with Environment variables CONFIG_NAME, CONFIG_INSTANCE and CONFIG_TOKEN that should be used on initial runner configuration.
+    # If set instance, name, and token are ignored.
+    existingInitSecret: forgejo-runner-init
+
+    instance:
+    name:
+    token:
+    file:
+      log:
+        level: "info"
+        job_level: info
+      runner:
+        file: ".runner"
+        capacity: 4
+        envs:
+          DOCKER_HOST: tcp://127.0.0.1:2376
+          DOCKER_TLS_VERIFY: 1
+          DOCKER_CERT_PATH: /certs/client
+        timeout: 3h
+        insecure: false
+        fetch_timeout: 5s
+        fetch_interval: 2s
+        labels: []
+
+      container:
+        network: host
+        enable_ipv6: false
+        privileged: false
+        options: -v /certs/client:/certs/client
+        valid_volumes:
+          - /certs/client
+
+      cache:
+        # -- Enable cache server to use actions/cache.
+        # @section -- Configuration yaml of runner (see: https://code.forgejo.org/forgejo/runner/src/branch/main/internal/pkg/config/config.example.yaml)
+        enabled: true
+        # -- The directory to store the cache data.
+        # If it's empty, the cache data will be stored in $HOME/.cache/actcache.
+        # @section -- Configuration yaml of runner (see: https://code.forgejo.org/forgejo/runner/src/branch/main/internal/pkg/config/config.example.yaml)
+        dir: ""
+        # -- The host of the cache server.
+        # It's not for the address to listen, but the address to connect from job containers.
+        # So 0.0.0.0 is a bad choice, leave it empty to detect automatically.
+        # @section -- Configuration yaml of runner (see: https://code.forgejo.org/forgejo/runner/src/branch/main/internal/pkg/config/config.example.yaml)
+        host: ""
+        # -- The port of the cache server.
+        # 0 means to use a random available port.
+        # @section -- Configuration yaml of runner (see: https://code.forgejo.org/forgejo/runner/src/branch/main/internal/pkg/config/config.example.yaml)
+        port: 0
+        # -- The external cache server URL. Valid only when enable is true.
+        # If it's specified, act_runner will use this URL as the ACTIONS_CACHE_URL rather than start a server by itself.
+        # The URL should generally end with "/".
+        # @section -- Configuration yaml of runner (see: https://code.forgejo.org/forgejo/runner/src/branch/main/internal/pkg/config/config.example.yaml)
+        external_server: ""
+
+      host:
+        # -- The parent directory of a job's working directory.
+        # If it's empty, $HOME/.cache/act/ will be used.
+        # @section -- Configuration yaml of runner (see: https://code.forgejo.org/forgejo/runner/src/branch/main/internal/pkg/config/config.example.yaml)
+        workdir_parent:

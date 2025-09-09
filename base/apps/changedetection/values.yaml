@@ -22,6 +22,6 @@ persistence:
     readOnly: false
     storageClass: "nfs-client"
     accessMode: ReadWriteOnce
-    size: 20Mi
+    size: 100Mi
     retain: false
 

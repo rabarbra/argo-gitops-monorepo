@@ -540,7 +540,7 @@ securityContext:
   allowPrivilegeEscalation: false
   readOnlyRootFilesystem: false
   runAsNonRoot: true
-  privileged: true
+  privileged: false
   capabilities:
     drop: ["ALL"]
 

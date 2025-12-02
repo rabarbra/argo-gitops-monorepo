@@ -15,7 +15,7 @@ resources:
 # helmCharts:
 # - name: changedetection-io
 #   namespace: changedetection
-#   version: 1.57.0
+#   version: 1.77.0
 #   repo: https://zekker6.github.io/helm-charts/
 #   valuesFile: ../../../../base/apps/changedetection/values.yaml
 #   releaseName: ""
